@@ -1,3 +1,4 @@
+theme:minimal
 # Dependencies
 markdown:         redcarpet
 highlighter:      pygments
@@ -13,8 +14,8 @@ description:      'A brazen two-column <a href="http://jekyllrb.com" target="_bl
 url:              http://amoghpj.github.io/
 baseurl:          /
 
-author:
-  name:           'Amogh Jalihal'
+#author:
+#  name:           'Amogh Jalihal'
 #  url:            https://twitter.com/mdo
 
 #paginate:         5
@@ -24,4 +25,4 @@ author:
 
 #github:
 #repo: https://github.com/poole/hyde
-remote_theme: qwtel/hydejack
+#remote_theme: qwtel/hydejack
