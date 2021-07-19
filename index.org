@@ -1,0 +1,5 @@
+#+INCLUDE: setup.org
+
+#+TITLE: Models of cellular growth
+*  Phenomenological growth models
+1. [[./Scott-Hwa-2014.html][Scott-Hwa 2014]]

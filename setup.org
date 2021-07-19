@@ -1,0 +1,15 @@
+#+PROPERTY: header-args:python :eval never-export
+#+PROPERTY: header-args:bash :eval never-export
+#+PROPERTY: header-args:emacs-lisp :eval never-export
+#+OPTIONS: prop:t
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="readtheorg_theme/css/htmlize.css"/>
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="readtheorg_theme/css/readtheorg.css"/>
+
+#+HTML_HEAD: <style> #content{max-width:1800px;}</style>
+#+HTML_HEAD: <style> p{max-width:800px;}</style>
+#+HTML_HEAD: <style> li{max-width:800px;}</style
+#+STARTUP: fold
+#+TODO: TODO NEXT IN-PROGRESS | DONE CANCELED
+#+CATEGORY: work
+#+MACRO: date (eval (shell-command-to-string "date"))
+Exported on {{{date}}}
