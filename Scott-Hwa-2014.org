@@ -1,8 +1,9 @@
 #+INCLUDE: setup.org
-* Exploring growth models from Scott and Hwa with respect to proteome partitioning
-  :PROPERTIES:
-  :CUSTOM_ID: exploring-growth-models-from-scott-and-hwa-with-respect-to-proteome-partitioning
-  :END:
+
+- Scott, M., Klumpp, S., Mateescu, E. M., & Hwa, T. (2014). Emergence
+  of robust growth laws from optimal regulation of ribosome
+  synthesis. Molecular Systems Biology, 10(8),
+  747–747. http://dx.doi.org/10.15252/msb.20145379
 
 #+BEGIN_SRC python
 import matplotlib.pyplot as plt
@@ -18,18 +19,14 @@ plt.rcParams['figure.figsize']=5,5
    :CUSTOM_ID: empirical-obervations
    :END:
 
-Positive correlation between RNA/Protein ratio and growth rate with
-increasing nutrient quality, conditioned on translation efficiency
-\[\gamma\]
+The model relies on two important empirical trends observed from experimental measurements. Plotting the total RNA/Protein ratio ($r$) from cultures grown in different media to yield different growth rates ($\lambda$), the authors note two trends:
+1. A positive correlation between RNA/Protein ratio and growth rate with increasing nutrient quality, conditioned on 'translation efficiency' $\gamma$
+   \[r=r_0+\frac{\lambda}{\gamma}\]
+2. A negative correlation between RNA/Protein ratio and growth rate with increasing translation inhibition (chloramphenicol treatment), conditioned on nutrient capacity $\nu$
+   \[r=r_{max}-\frac{\lambda}{\nu}\]
 
-\[r=r_0+\frac{\lambda}{\gamma}\]
-
-Negative correlation between RNA/Potein ratio and growth rate with
-increasing translation inhibition, conditioned on nutrient capacity
-\[\nu\]
-
-\[r=r_{max}-\frac{\lambda}{\nu}\]
-
+By 'conditioned on nutrient capacity', the authors mean that both $\lambda$ and $\nu$ are dependent on the amount of amino acids present in the medium. 
+** Ribosome fraction of the proteome
 Making the transformation to the ribosome associated fraction of the
 proteome as follows: $\Phi_R=\rho r$, we can rewrite the above empirical
 observations as follows
@@ -54,8 +51,7 @@ phiR0=0.07
 
 #+RESULTS:
 
-The steady state amino acid pool =astar= concentration will be varied
-over three orders of magnitude.
+We can study the behavior of the ribosome fraction by varying the steady state amino acid pool =astar= concentration over three orders of magnitude.
 
 #+BEGIN_SRC python
 astar=np.logspace(-5,-2)
@@ -67,8 +63,8 @@ These parameters are assumed to have a sigmoidal dependence on nutrient
 quality, or more specifically on the steady state amino acid pool sizes
 as follows:
 
-$\gamma=\gamma_0\frac{(a^*/K_t)^2}{1+(a^*/K_t)^2}$ where $K_t$ is
-assigned the value $10^{-4}$
+\[\gamma=\gamma_0\frac{(a^*/K_t)^2}{1+(a^*/K_t)^2}\]
+where $K_t$ is assigned the value $10^{-4}$
 
 #+BEGIN_SRC python
 Kt=1e-4
